@@ -9,6 +9,10 @@
       background-color: #121212;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #ffffff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
     }
 
     header {
@@ -20,27 +24,27 @@
       font-weight: bold;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       z-index: 1000;
-      position: relative;
+      flex-shrink: 0;
+    }
+
+    .iframe-container {
+      flex-grow: 1;
+      overflow-y: auto; /* Adds vertical scrollbar */
     }
 
     iframe {
-      position: absolute;
-      top: 80px; /* height of the header */
-      left: 0;
       width: 100%;
-      height: calc(100% - 80px);
-      border: none;
-      z-index: 999;
-    }
-
-    html, body {
       height: 100%;
-      overflow: hidden;
+      border: none;
+      display: block;
     }
   </style>
 </head>
 <body>
   <header>Made by Lord_Voldemort</header>
-  <iframe src="https://chromedino.com/" scrolling="no" loading="lazy"></iframe>
+  <div class="iframe-container">
+    <iframe src="https://chromedino.com/" loading="lazy"></iframe>
+  </div>
 </body>
 </html>
+
